@@ -18,7 +18,11 @@ const initWebRoute = (app) => {
     // router.post('/users/create-user',handleCreateUser)
     // // router.post('/delete-user/:id',handeDeleteUser)
     // // router.get('/update-user/:id',getUpdateUserPage=()=>{res.send('cac')})
-
+    router.get('/ranking/:id', (req, res) => {
+        const selectedSeason = req.params.season;
+        // Thực hiện các xử lý cần thiết với giá trị đã chọn
+        res.send(`Bạn đã chọn mùa giải: ${selectedSeason}`);
+    });
     return app.use('/', router)
 }
 

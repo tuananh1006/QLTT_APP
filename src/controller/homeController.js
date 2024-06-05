@@ -15,8 +15,11 @@ const handleScheduler=async (req,res)=>{
 const handleRanking=async(req,res)=>{
     var query = 'select * from BXH1'
     var result=await selectDatabase(query)
-    console.log(result)
-    return res.render('ranking.ejs',{result})
+    var query2='select seasonName from SEASON'
+    var result2=await selectDatabase(query2)
+
+    console.log(result2)
+    return res.render('ranking.ejs',{result,result2})
 }
 
 const handleTeams=(req,res)=>{
